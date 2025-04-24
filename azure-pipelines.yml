@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: ZXLocalAgent
+  name: LocalDevOpsAgent
   vmImage: ubuntu-latest
 
 variables:
