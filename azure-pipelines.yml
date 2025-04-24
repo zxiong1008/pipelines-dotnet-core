@@ -1,18 +1,21 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
-- master
+  - main  # Adjust branch as needed
 
 pool:
-  name: LocalDevOpsAgent
-  vmImage: ubuntu-latest
-
-variables:
-  buildConfiguration: 'Release'
+  name: LocalDevOpsAgent  # Self-hosted agent pool
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+  - task: UseDotNet@2
+    displayName: 'Install .NET SDK'
+    inputs:
+      packageType: 'sdk'
+      version: '8.x'  # Adjust to match your project needs
+
+  - script: dotnet restore
+    displayName: 'Restore Dependencies'
+
+  - script: dotnet build --configuration Release
+    displayName: 'Build Project'
+
+  - script: dotnet test
+    displayName: 'Run Tests'
