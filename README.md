@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/zxiong1008/zengxiong/_apis/build/status%2Fzxiong1008.pipelines-dotnet-core.selfhost?branchName=master)](https://dev.azure.com/zxiong1008/zengxiong/_build/latest?definitionId=4&branchName=master)
 # Sample ASP.NET Core application for Azure Pipelines docs
 
 For information on how to set up a pipeline for this repository, see [Create your first pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml?view=azure-devops).
