@@ -2,7 +2,7 @@ trigger:
   - main  # Adjust branch as needed
 
 pool:
-  name: LocalDevOpsAgent  # Self-hosted agent pool
+  name: ZXLocalAgent  # Self-hosted agent pool
 
 steps:
   - task: UseDotNet@2
